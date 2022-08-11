@@ -1,0 +1,2 @@
+#!/bin/bash
+/usr/bin/python3 /mnt/DATA/my_projects/headless-player/player.py $1

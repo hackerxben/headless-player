@@ -29,7 +29,7 @@ def play(driver:WebDriver,url):
     driver.get(url)
     if "youtube" in url:
         driver.find_element(By.CSS_SELECTOR,"#movie_player > div.ytp-cued-thumbnail-overlay > button").click()
-        video_title = driver.find_element(By.CSS_SELECTOR,"#container > h1 > yt-formatted-string").text
+        video_title = driver.find_element(By.CSS_SELECTOR,"#title > h1 > yt-formatted-string").text
         print("Current video: "+video_title)
         while(video_title):
             try:
@@ -38,7 +38,7 @@ def play(driver:WebDriver,url):
                     find_yes_btn.click()
             except Exception:
                 "No confirm button"
-            new_video_title = driver.find_element(By.CSS_SELECTOR,"#container > h1 > yt-formatted-string").text
+            new_video_title = driver.find_element(By.CSS_SELECTOR,"#title > h1 > yt-formatted-string").text
             if(new_video_title != video_title):
                 video_title = new_video_title
                 print("Current video: "+video_title)

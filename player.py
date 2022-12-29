@@ -33,7 +33,7 @@ def play(driver:WebDriver,url):
         print("Current video: "+video_title)
         while(video_title):
             try:
-                find_yes_btn = driver.find_element(By.CSS_SELECTOR,"#button")
+                find_yes_btn = driver.find_element(By.CSS_SELECTOR,"#confirm-button > yt-button-shape > button > yt-touch-feedback-shape > div > div.yt-spec-touch-feedback-shape__fill")
                 if(find_yes_btn):
                     find_yes_btn.click()
             except Exception:
